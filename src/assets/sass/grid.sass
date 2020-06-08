@@ -1,0 +1,195 @@
+.container
+  width: 100vw
+  postion: relative
+  padding: 0
+  overflow: hidden
+
+// GRID
+.flex-grid
+  display: flex
+  justify-content: space-between
+  width: 100%
+  max-width: 160rem
+  margin: 0 auto
+  flex-wrap: wrap
+  &.reversed
+    flex-direction: row-reverse
+  &.mobile-reversed
+    @media only screen and (max-width: 500px)
+      flex-direction: row-reverse
+  &.full-height
+    height: 100%
+  &.full-width
+    max-width: none
+  position: relative
+  .col
+    margin: 0
+    flex: 0 1 auto
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    min-hieght: 20rem
+    &.no-justify
+      justify-content: flex-start
+    &.flex-end
+      align-content: flex-end
+    min-height: 1rem
+    &.col1
+      width: calc(8.333% - 3rem)
+    &.col2
+      width: calc(16.666% - 3rem)
+    &.col3
+      width: calc(25% - 3rem)
+    &.col4
+      width: calc(33.333% - 3rem)
+    &.col5
+      width: calc(41.666% - 3rem)
+    &.col6
+      width: calc(50% - 3rem)
+    &.col7
+      width: calc(58.333% - 3rem)
+    &.col8
+      width: calc(66.666% - 3rem)
+    &.col9
+      width: calc(75% - 3rem)
+    &.col10
+      width: calc(83.333% - 3rem)
+    &.col11
+      width: calc(91.666% - 3rem)
+    &.col12
+      width: 100%
+    @media only screen and (max-width: 500px)
+      &.col1
+        width: calc(25% - 3rem)
+      &.col2,
+      &.col3,
+      &.col4,
+      &.col5,
+      &.col6,
+      &.col7,
+      &.col8,
+      &.col9,
+      &.col10,
+      &.col11,
+      &.col12
+        width: 100%
+    &.center-v
+      justify-content: center
+      flex-direction: column
+    &.center-h
+      align-items: center
+      flex-direction: row
+    img
+      max-width: 100%
+      position: relative
+      z-index: 1
+    &.padding-large
+      padding: 6rem
+      @media only screen and (max-width: 500px)
+        padding: 0
+    h1, h2, h3, h4, h5, h6, p
+      flex: 0 1 auto
+  &.no-margin
+    .col
+      &.col1
+        width: 8.333%
+      &.col2
+        width: 16.666%
+      &.col3
+        width: 25%
+      &.col4
+        width: 33.333%
+      &.col5
+        width: 41.666%
+      &.col6
+        width: 50%
+      &.col7
+        width: 58.333%
+      &.col8
+        width: 66.666%
+      &.col9
+        width: 75%
+      &.col10
+        width: 83.333%
+      &.col11
+        width: 91.666%
+      &.col12
+        width: 100%
+.full-width
+  width: 100%
+  display: flex
+  
+
+// FLOAT GRID
+.float-grid
+  width: 100%
+  max-width: 1366px
+  &.full-width
+    width: 100%
+  margin: 0 auto
+  padding: 0 2rem
+  position: relative
+  &.unpadded
+    .col
+      padding: 0
+  .wrapper
+    width: 100%
+    float: left
+    padding: 0 2rem
+  .col
+    margin: 0
+    float: left
+    position: relative
+    padding: 0 3rem
+    min-height: 1rem
+    &:first-child
+      padding: 0 3rem 0 0
+    &:last-child
+      padding: 0 0 0 3rem
+    &.col1
+      width: 8.333%
+    &.col2
+      width: 16.666%
+    &.col3
+      width: 25%
+    &.col4
+      width: 33.333%
+    &.col5
+      width: 41.666%
+    &.col6
+      width: 50%
+    &.col7
+      width: 58.333%
+    &.col8
+      width: 66.666%
+    &.col9
+      width: 75%
+    &.col10
+      width: 83.333%
+    &.col11
+      width: 91.666%
+    &.col12
+      width: 100%
+    img
+      max-width: 100%
+      position: relative
+      z-index: 2
+
+  .center
+    transform: translate(-50%, -50%)
+    position: absolute
+    top: 50%
+    left: 50%
+
+  .center-v
+    transform: translateY(-50%)
+    position: absolute
+    top: 50%
+    left: 0
+
+  .center-h
+    transform: translateX(-50%)
+    position: absolute
+    top: 0
+    left: 50%

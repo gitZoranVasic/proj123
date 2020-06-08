@@ -1,0 +1,653 @@
+@import "@/assets/sass/palette.sass"
+
+html
+  font-family: 'Gilroy W05 Light'
+  word-spacing: 1px
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  box-sizing: border-box
+  // font-size: 50%
+  font-size: calc((1vw + 1vh) / 3)
+  @media only screen and (max-width: 500px)
+    font-size: 62.5%
+  color: $very-dark
+
+*,
+*:before,
+*:after
+  box-sizing: border-box
+  margin: 0
+
+body
+  font-size: 1.6rem
+  // .wrapper
+  //   height: 100vh
+  //   overflow: hidden
+  //   overflow-y: scroll
+  //   perspective: 10px
+  section
+    width: 100%
+    // float: left
+    margin: 0 0 20rem 0
+    @media only screen and (max-width: 1580px)
+      margin: 0 0 15rem 0
+    @media only screen and (max-width: 500px)
+      margin: 0 0 6rem 0
+    position: relative
+    padding: 0 3rem
+    @media only screen and (max-width: 1580px)
+      padding: 0 2rem
+    &.no-padding
+      padding: 0
+    &.half-margin
+      margin: -10rem 0 10rem 0
+      @media only screen and (max-width: 500px)
+        margin: -4rem 0 7rem 0
+h1, h2, h3, h4, h5, h6, select
+  font-family: 'Gilroy W05 SemiBold'
+  font-weight: normal
+  margin: 0 0 2rem 0
+  
+p, h1, h2, h3, h4, h5, h6, select
+  &.white
+    color: $white
+
+h1
+  font-size: 6rem
+  font-weight: 600
+  line-height: 7.3rem
+  @media only screen and (max-width: 500px)
+    font-size: 3.2rem
+    line-height: 4rem
+
+h2
+  font-size: 3.8rem
+  font-weight: 600
+  line-height: 5rem
+  margin-bottom: 4rem
+  &.three-quarters
+    max-width: 75%
+  &.center
+    text-align: center
+    width: 100%
+    max-width: none
+  &.padding-large
+    margin-bottom: 8rem
+    @media only screen and (max-width: 500px)
+      margin-bottom: 4rem
+  @media only screen and (max-width: 500px)
+    font-size: 3.2rem
+    line-height: 4rem
+    margin-bottom: 2rem
+
+h3
+  margin-bottom: 1rem
+
+h4
+  font-size: 2rem
+  font-weight: 600
+  line-height: 2.4rem
+
+h6
+  font-size: 1.2rem
+  opacity: 0.7
+  font-family: 'Gilroy W05 Light'
+
+p
+  font-size: 1.6rem
+  margin: 0 0 2rem 0
+  line-height: 2.8rem
+  &.no-margin
+    margin: 0
+  .icon
+    width: 1.2rem
+    height: 1.2rem
+  sup
+    transform: scale(0.5) translateX(-0.5rem)
+    display: inline-block
+
+a
+  color: $very-dark
+  text-decoration: none
+  font-family: 'Gilroy W05 SemiBold'
+  outline: none
+  &:hover
+    text-decoration: none
+  &:focus,
+  &:active
+    outline: none
+    shadow: none
+
+
+hr
+  border: none
+  border-top: 1px solid $white
+  width: 100%
+  margin: 8rem 0
+  @media only screen and (max-width: 500px)
+    margin: 4rem 0
+  padding: 0
+  opacity: 0.4
+
+input,
+select,
+textarea
+  width: 100%
+  font-family: 'Gilroy W05 Light'
+  border: none
+  margin: 0 0 2rem 0
+  background: rgba($dark, 0.25)
+  height: 6rem
+  border: none
+  line-height: 2rem
+  border-radius: 1rem
+  color: $white
+  font-size: 1.8rem
+  padding: 2rem
+  -webkit-appearance: none
+textarea
+  height: 17rem
+input
+  &[type='submit']
+    width: auto
+    margin-left: auto
+
+.button-holder
+  display: flex
+  margin-top: 4rem
+  @media only screen and (max-width: 500px)
+    align-items: center
+    justify-content: space-around
+    margin-top: 3rem
+    margin-bottom: 3rem
+  button
+    margin: 0 3rem 0 0 !important
+    @media only screen and (max-width: 500px)
+      margin: 0 2rem 0 0 !important
+      transform: translateX(-4rem)
+.select-holder
+  position: relative
+  width: 100%
+  .dropdownicon
+    position: absolute
+    top: 0
+    right: 0
+    width: 6rem
+    height: 6rem
+    padding: 2rem
+
+button,
+.button
+  background: $accent-pink
+  border-radius: 4rem
+  height: 6rem
+  border: none
+  padding: 0
+  margin: 0 0 0 2rem
+  line-height: calc(6rem - 4px)
+  color: $white
+  padding: 0 3rem
+  min-width: 16rem
+  font-size: 1.6rem
+  font-family: 'Gilroy W05 SemiBold'
+  border: 2px solid $accent-pink
+  display: inline-block
+  cursor: pointer
+  text-align: center
+  outline: none
+  position: relative
+  .message
+    width: 100%
+    text-align: center
+  .sending
+    height: calc(6rem - 4px)
+    @media only screen and (max-width: 500px)
+      height: calc(5rem - 4px)
+    padding: calc(1.5rem - 2px)
+    @media only screen and (max-width: 500px)
+      padding: calc(1rem - 2px)
+    display: block
+    svg
+      width: 3rem
+      height: 3rem
+  @media only screen and (max-width: 500px)
+    height: 5rem
+    line-height: calc(5rem - 4px)
+    font-size: 1.4rem
+    min-width: 1.24rem
+  &:first-child
+    margin-left: 0
+  &.right
+    margin-left: auto
+  &.outline
+    color: $accent-pink
+    background: none
+    &:focus,
+    &:active
+      outline: none
+      background: $accent-pink
+      color: $white
+  &.white
+    border: 2px solid $white
+    color: $white
+    background: none
+    &:hover
+      background: rgba($white, 0.1)
+    &:active
+      background: rgba($white, 0.2)
+      outline: none
+    &:focus
+      outline: none
+  &.solid-white
+    border: 2px solid $white
+    background: white
+    color: $very-dark
+  &.play
+    width: 6rem
+    @media only screen and (max-width: 500px)
+      width: 5rem
+      display: none
+    min-width: 0
+    border: none
+    color: $white
+    box-shadow: inset 0 0 0 2px rgba($white, 0.5)
+    background: none
+    display: flex
+    position: relative
+    &:hover
+      background: rgba($white, 0.1)
+    &:active
+      background: rgba($white, 0.2)
+      outline: none
+    &:focus
+      outline: none
+    svg
+      position: absolute
+      width: 1.4rem
+      height: 1.4rem
+      top: 50%
+      left: calc(50% + 2px)
+      transform: translate(-50%, -50%)
+    &:after
+      position: absolute
+      left: 7.5rem
+      @media only screen and (max-width: 500px)
+        left: 6.5rem
+      content: "Watch Video"
+      line-height: 6rem
+      @media only screen and (max-width: 500px)
+        line-height: 5rem
+      top: 0
+      white-space: nowrap
+  
+  &.disabled
+    pointer-events: none
+    
+  
+
+ul
+  list-style-type: none
+  margin: 5rem 0 3rem 0
+  padding: 0
+  li
+    margin: 0
+    padding: 0
+    display: inline-block
+    font-size: 1.6rem
+  &.icon-list
+    flex-wrap: wrap
+    display: flex
+    justify-content: space-between
+    li
+      width: auto
+      display: inline-block
+      margin-bottom: 2rem
+      @media only screen and (max-width: 500px)
+        margin-bottom: 1rem
+      h3
+        font-size: 2rem
+        line-height: 6rem
+    &.col2
+      li
+        width: calc(50% - 2rem)
+        @media only screen and (max-width: 500px)
+          width: 100%
+      &:after
+        width: calc(50% - 2rem)
+        @media only screen and (max-width: 500px)
+          width: 100%
+    &.col3
+      li
+        width: calc(33.333% - 2rem)
+        @media only screen and (max-width: 500px)
+          width: 50%
+      &:after
+        width: calc(33.333% - 2rem)
+        @media only screen and (max-width: 500px)
+          width: 100%
+  &:after
+    content: ''
+  &.small
+    margin-top: 2rem
+    li
+      h3
+        line-height: 3rem
+    i
+      width: 3rem
+      height: 3rem
+      padding: 1rem
+      svg
+        width: 1rem
+        height: 1rem
+
+ul.status
+  background: $white
+  // position: relative
+  top: 100%
+  right: 0
+  left: auto
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.15)
+  &.fail
+    color: $accent-pink
+    background: rgba($dark-pink, 0.3)
+    border: 2px solid rgba($accent-pink, 0.4)
+  &.success
+    color: $accent-green
+    background: rgba($dark-green, 0.3)
+    border: 2px solid rgba($accent-green, 0.4)
+  padding: 2rem
+  margin: 1rem 0 0 auto
+  border-radius: 1rem
+  li
+    display: block
+    text-align: right
+    font-size: 1.4rem
+    margin: 0 0 0.5rem 0
+    font-weight: bold
+    &:last-child
+      margin: 0
+
+i
+  float: left
+  width: 6rem
+  height: 6rem
+  background: red
+  border-radius: 3rem
+  margin: 0 2rem 0 0
+  padding: 1.5rem
+  svg
+    display: block
+    width: 3rem
+    height: 3rem
+  &.blue
+    background: rgba($accent-blue, 0.3)
+    svg
+      fill: $accent-blue
+  &.orange
+    background: rgba($accent-orange, 0.3)
+    svg
+      fill: $accent-orange
+  &.purple
+    background: rgba($accent-purple, 0.3)
+    svg
+      fill: $accent-purple
+  &.green
+    background: rgba($accent-green, 0.3)
+    svg
+      fill: $accent-green
+
+
+
+.blue
+  color: $accent-blue
+.orange
+  color: $accent-orange
+.purple
+  color: $accent-purple
+.green
+  color: $accent-green
+.red
+  color: $accent-red
+
+.cards
+  width: 100%
+  @media only screen and (max-width: 768px)
+    overflow: auto
+    .flex-grid
+      &.three
+        width: 150%
+        padding-right: 2rem
+      &.four
+        width: 150%
+        padding-right: 2rem
+      .col.col3
+        width: calc(25% - 2rem)
+        margin-bottom: 3rem
+      .col.col4
+        width: calc(33.333% - 1.5rem)
+        margin-bottom: 3rem
+  @media only screen and (max-width: 500px)
+    padding: 0
+  @media only screen and (max-width: 1024px)
+    .wrapper
+      overflow: auto
+      padding: 0 2rem 3rem
+      &.padding-top
+        padding-top: 4rem
+    .flex-grid
+      // overflow: auto
+      &.three
+        width: 300%
+        padding-right: 2rem
+      &.four
+        width: 400%
+        padding-right: 2rem
+      .col.col3
+        width: calc(25% - 2rem)
+      .col.col4
+        width: calc(33.333% - 1.5rem)
+.card
+  border-radius: 1rem
+  padding: 3rem
+  color: $very-dark
+  &.type1
+    padding: 6rem 3rem
+    margin-bottom: 3rem
+    h4
+      width: 100%
+    &.blue
+      background: rgba($accent-blue, 0.3)
+    &.orange
+      background: rgba($accent-orange, 0.3)
+    &.purple
+      background: rgba($accent-purple, 0.3)
+    &.green
+      background: rgba($accent-green, 0.3)
+    &.red
+      background: rgba($accent-red, 0.3)
+  &.type2
+    padding: 0
+    box-shadow: 0 1rem 2rem rgba($very-dark, 0.2)
+    flex-direction: column
+    @media only screen and (max-width: 500px)
+      margin-bottom: 3rem
+    &.blue
+      background: $white
+      .image
+        background: rgba($accent-blue, 0.6)
+    &.orange
+      background: $white
+      .image
+        background: rgba($accent-orange, 0.6)
+    &.purple
+      background: $white
+      .image
+        background: rgba($accent-purple, 0.6)
+    &.green
+      background: $white
+      .image
+        background: rgba($accent-green, 0.6)
+    &.red
+      background: $white
+      .image
+        background: rgba($accent-red, 0.6)
+    .image
+      padding: 2rem 3rem
+      flex: 0 1 auto
+      display: flex
+      align-items: center
+      margin: 0
+      border-radius: 1rem 1rem 0 0
+    .copy
+      background: $white
+      padding: 7rem 5rem 9rem
+      @media only screen and (max-width: 500px)
+        padding: 5rem 3rem 7rem
+      width: 100%
+      border-radius: 0 0rem 1rem 1rem
+      position: relative
+      h5
+        position: absolute
+        top: -3.5rem
+        height: 7rem
+        line-height: 7rem
+        border-radius: 3.5rem
+        color: $white
+        min-width: 40%
+        padding: 0 4rem
+        left: 50%
+        transform: translateX(-50%)
+        text-align: center
+        font-size: 2rem
+        white-space: nowrap
+      p
+        margin: 0
+    p
+      &.link
+        display: flex
+        justify-content: center
+        margin: 4rem 0 0 0
+        a
+          color: $very-dark
+          font-family: 'Gilroy W05 SemiBold'
+          line-height: 1.5rem
+          margin: 0 1rem 0 0
+        svg
+          fill: $very-dark
+          width: 1.5rem
+          height: 1.5rem 
+        &.fixed
+          position: absolute
+          bottom: 5rem
+          left: 50%
+          transform: translateX(-50%)
+  &.quote
+    .copy
+      border-radius: 1rem
+      p
+        margin-bottom: 3rem
+    i
+      position: absolute
+      top: -3rem
+      left: 3rem
+      @media only screen and (max-width: 500px)
+        left: 1rem
+        top: -3rem
+        transform: scale(0.8)
+      z-index: 10
+      padding: 2rem
+      &.blue
+        background: $light-blue
+        svg
+          width: 100%
+          height: 2rem
+          fill: $accent-blue
+    h4
+      font-siuze: 1.6
+      margin-bottom: 0.5rem
+    h6
+      margin-bottom: 0
+  .icon
+    width: 4rem
+    height: 4rem
+    margin-bottom: 3rem
+    float: none
+  &.blue
+    background: rgba($accent-blue, 0.6)
+    svg
+      fill: $accent-blue
+    h5
+      background: $accent-blue
+  &.orange
+    background: rgba($accent-orange, 0.6)
+    svg
+      fill: $accent-orange
+    h5
+      background: $accent-orange
+  &.purple
+    background: rgba($accent-purple, 0.6)
+    svg
+      fill: $accent-purple
+    h5
+      background: $accent-purple
+  &.green
+    background: rgba($accent-green, 0.6)
+    svg
+      fill: $accent-green
+    h5
+      background: $accent-green
+
+//TRANSITIONS
+
+// FADE
+.fade-enter-active, .fade-leave-active 
+  transition: opacity .5s
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+// SLIDE
+.slide-leave-active,
+.slide-enter-active
+  transition: 0.5s
+  transform: translate(0, 0)
+.slide-enter
+  transform: translate(100%, 0)
+.slide-leave-to
+  transform: translate(100%, 0)
+
+//BANNER
+$banner-spacing: 12rem
+$mobile-banner-spacing: 10rem
+
+//DISABLING ELEMENTS
+.mobile-disabled
+  @media only screen and (max-width: 500px)
+    display: none !important
+
+.desktop-disabled
+  @media only screen and (min-width: 500px)
+    display: none !important
+
+// /* Small Devices, Tablets */
+// @media only screen and (max-width : 500px)
+//   .aos-animate
+//     /*CSS transitions*/
+//     -o-transition-property: none !important
+//     -moz-transition-property: none !important
+//     -ms-transition-property: none !important
+//     -webkit-transition-property: none !important
+//     transition-property: none !important
+//     /*CSS transforms*/
+//     -o-transform: none !important
+//     -moz-transform: none !important
+//     -ms-transform: none !important
+//     -webkit-transform: none !important
+//     transform: none !important
+//     /*CSS animations*/
+//     -webkit-animation: none !important
+//     -moz-animation: none !important
+//     -o-animation: none !important
+//     -ms-animation: none !important
+//     animation: none !important
